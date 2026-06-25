@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Past Discovery Days — Discovery Day</title>
+<meta name="description" content="Every Discovery Day so far. Click any day to see the full story, photos, and numbers." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 3h5"/><path d="M10.5 3v5L5.7 17.4A2 2 0 0 0 7.5 20.4h9a2 2 0 0 0 1.8-3L13.5 8V3"/><path d="M8 14.5h8"/><circle cx="11" cy="17" r=".7" fill="#fff" stroke="none"/></svg></span> Discovery Day</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    <nav class="links" id="links">
+      <a href="index.html">Home</a>
+      <a href="workshops.html">Workshops</a>
+      <a href="past.html" class="active">Past Discovery Days</a>
+      <a href="about.html">About us</a>
+      <a href="#contact" class="btn btn-green">Get in touch!</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:1.5rem">
+  <div class="wrap">
+    <div class="sec-head" style="max-width:none">
+      <span class="eyebrow">Past Discovery Days</span>
+      <h2 style="font-size:clamp(2.2rem,5vw,3.4rem)">Every Discovery Day, in order.</h2>
+      <p class="lead" style="max-width:60ch">From the first classes in 2025 to a two-day science takeover this spring. Tap any day to see the full story, photos, and numbers.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:.5rem">
+  <div class="wrap">
+    <div class="timeline" id="days"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--amber)">Get in touch</span>
+      <h2>Work with us!</h2>
+      <p class="sub">We would love to run a workshop with your class. Reach out to Deniz and Shivaani to get started. If you're a high-schooler interested in joining the team, send us an email.</p>
+    </div>
+    <div class="ccard">
+      <img class="leads-photo" src="images/teach-leads.jpg" alt="Deniz and Shivaani, the Discovery Day leads, teaching" />
+      <h3>Deniz &amp; Shivaani</h3>
+      <p>Discovery Day leads · The Harker School. Reach out for workshop requests, questions, or to join the team:</p>
+      <a class="mail" href="mailto:29denize@students.harker.org">29denize@students.harker.org</a>
+      <a class="mail" href="mailto:29shivaanik@students.harker.org">29shivaanik@students.harker.org</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><div class="fb">🔬 Discovery Day</div><p>Hands-on science for every student · Founded 2025</p></div></footer>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true"><div class="modal" id="modal"></div></div>
+<div class="lightbox" id="lightbox"><button class="lb-close" id="lbClose" aria-label="Close">×</button><img id="lightbox-img" src="" alt="Discovery Day photo, enlarged" /></div>
+
+<script src="app.js"></script>
+<script>
+  const DAYS = [
+    { id:"april2026", date:"April 2026", subject:"Earth Science", subjectKey:"Earth",
+      title:"Greenhouse Effect & Climate Change", img:"images/class-wide.jpg", place:"Peterson Middle School",
+      keystat:"330 students taught",
+      blurb:"Discovery Day returned to Peterson Middle School for a two-day science event with the sixth grade. Working alongside two of the school's science teachers, the team ran the Greenhouse Effect Comparison Lab: students built two bottles of air, one with extra carbon dioxide, and measured which warmed faster under a lamp. From there, they connected the data to a bigger idea, how carbon dioxide drives climate change.",
+      stats:[["330","students"],["2","days, 5 classes/day"],["2","science teachers"],["6th","grade"]],
+      images:["images/class-wide.jpg","images/students.jpg","images/presenting-1.jpg","images/presenting-2.jpg","images/timer.jpg","images/room.jpg","images/teach-leads.jpg"],
+      links:[{href:"materials/lab-greenhouse-effect.pdf", text:"📄 See the greenhouse lab worksheet", blank:true}] },
+    { id:"founding2025", date:"2025", subject:"Where it began", subjectKey:"Founding",
+      title:"The first Discovery Day", img:"images/fdd-teaching.jpg", place:"Peterson Middle School",
+      keystat:"108 students taught",
+      blurb:"Discovery Day started in 2025 in response to science budget cuts at Peterson Middle School. Founder Kimi Yashar ran the first program single-handedly, reaching 108 students across three hands-on classes with the kind of experiments that spark a lifelong love of science. It worked, and it set the blueprint for everything since.",
+      stats:[["108","students"],["3","classes"],["Chem + physics","labs"]],
+      images:["images/fdd-teaching.jpg","images/fdd-help.jpg","images/fdd-tables.jpg","images/fdd-class1.jpg","images/fdd-teach2.jpg","images/fdd-present.jpg","images/fdd-class2.jpg","images/fdd-trays.jpg","images/fdd-cups.jpg","images/fdd-string.jpg","images/fdd-petriart.jpg","images/fdd-hotice.jpg","images/fdd-setup1.jpg","images/fdd-setup2.jpg","images/fdd-worksheet.jpg","images/fdd-petri.jpg"],
+      links:[{href:"materials/lab-hot-ice.pdf", text:"📄 See the hot ice lab worksheet", blank:true},{href:"about.html", text:"Read the founding story →", blank:false}] }
+  ];
+
+  const days=document.getElementById("days");
+  const cardHTML = d => `<article class="tl-entry reveal">
+      <span class="tl-ghost" aria-hidden="true">${d.date.split(" ").pop()}</span>
+      <div class="tl-date">${d.date}</div>
+      <div class="tl-card" data-id="${d.id}" tabindex="0" aria-label="${d.title}">
+        <div class="img"><img src="${d.img}" alt="${d.title}" loading="lazy" /></div>
+        <div class="b">
+          <span class="subj subj-${d.subjectKey}" style="position:static;display:inline-block">${d.subject}</span>
+          <h3>${d.title}</h3>
+          <div class="tl-meta"><b>${d.keystat.split(" ")[0]}</b> ${d.keystat.split(" ").slice(1).join(" ")} · ${d.place}</div>
+          <span class="more">View the day →</span>
+        </div>
+      </div>
+    </article>`;
+  days.innerHTML = DAYS.map(cardHTML).join("");
+  requestAnimationFrame(function(){document.querySelectorAll('#days .tl-entry').forEach(function(el,i){el.style.transitionDelay=(i*120)+'ms';el.classList.add('in');});});
+
+  function openModal(id){
+    const d=DAYS.find(x=>x.id===id); if(!d) return;
+    const imgs=d.images||[d.img];
+    const dots=imgs.map(function(_,i){return '<button data-i="'+i+'" class="'+(i===0?'on':'')+'" aria-label="Image '+(i+1)+'"></button>';}).join("");
+    const stats = '<div class="estats">'+d.stats.map(function(s){return '<span><b>'+s[0]+'</b> '+s[1]+'</span>';}).join("")+'</div>';
+    const links = (d.links&&d.links.length) ? '<div class="md-actions">'+d.links.map(function(l,i){return '<a class="btn '+(i===0?'btn-green':'btn-ghost')+'" href="'+l.href+'" '+(l.blank?'target="_blank" rel="noopener"':'')+'>'+l.text+'</a>';}).join("")+'</div>' : "";
+    var M=document.getElementById("modal"); M.classList.add("modal-day");
+    M.innerHTML =
+      '<button class="close" id="closeBtn" aria-label="Close">×</button>'
+      +'<div class="md-grid">'
+      +'<div class="carousel">'
+      +'<div class="car-stage">'
+      +'<button class="car-arrow prev" id="carPrev" aria-label="Previous photo">‹</button>'
+      +'<img id="carImg" src="'+imgs[0]+'" alt="Photo from '+d.title+'" />'
+      +'<button class="car-arrow next" id="carNext" aria-label="Next photo">›</button>'
+      +'<span class="car-count" id="carCount">1 / '+imgs.length+'</span>'
+      +'</div>'
+      +'<div class="car-dots" id="carDots">'+dots+'</div>'
+      +'</div>'
+      +'<div class="md-body">'
+      +'<div class="m-kicker"><span class="subj subj-'+d.subjectKey+'">'+d.subject+'</span><span class="m-when">'+d.date+' · '+d.place+'</span></div>'
+      +'<h2>'+d.title+'</h2>'
+      +'<p class="desc">'+d.blurb+'</p>'
+      +stats+links
+      +'</div>'
+      +'</div>';
+    var idx=0,
+        imgEl=document.getElementById("carImg"),
+        cnt=document.getElementById("carCount"),
+        dotsEl=document.getElementById("carDots");
+    function show(n){idx=(n+imgs.length)%imgs.length;imgEl.src=imgs[idx];cnt.textContent=(idx+1)+" / "+imgs.length;Array.prototype.forEach.call(dotsEl.children,function(b,i){b.classList.toggle("on",i===idx);});}
+    document.getElementById("carPrev").onclick=function(){show(idx-1);};
+    document.getElementById("carNext").onclick=function(){show(idx+1);};
+    dotsEl.addEventListener("click",function(e){var b=e.target.closest("button");if(b)show(parseInt(b.dataset.i,10));});
+    var L=document.getElementById("lightbox"),LI=document.getElementById("lightbox-img");
+    imgEl.style.cursor="zoom-in";
+    imgEl.onclick=function(){LI.src=imgEl.src;L.classList.add("open");};
+    document.getElementById("overlay").classList.add("open");
+    document.body.style.overflow="hidden";
+    document.getElementById("closeBtn").onclick=closeModal;
+    M._key=function(e){if(e.key==="ArrowLeft"){show(idx-1);}else if(e.key==="ArrowRight"){show(idx+1);}};
+    document.addEventListener("keydown",M._key);
+  }
+  function closeModal(){var M=document.getElementById("modal");if(M._key){document.removeEventListener("keydown",M._key);M._key=null;}document.getElementById("overlay").classList.remove("open");document.body.style.overflow="";}
+  days.addEventListener("click",e=>{const c=e.target.closest(".tl-card");if(c)openModal(c.dataset.id);});
+  days.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){const c=e.target.closest(".tl-card");if(c){e.preventDefault();openModal(c.dataset.id);}}});
+  document.getElementById("overlay").addEventListener("click",e=>{if(e.target.id==="overlay")closeModal();});
+  // auto-open a day when linked here with a hash (e.g. past.html#founding2025)
+  (function(){var h=(location.hash||"").replace("#","");if(h&&DAYS.some(function(d){return d.id===h})){openModal(h);}})();
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){var L=document.getElementById("lightbox");if(L.classList.contains("open")){L.classList.remove("open");}else{closeModal();}}});
+  (function(){
+    var L=document.getElementById("lightbox"), LI=document.getElementById("lightbox-img");
+    document.getElementById("modal").addEventListener("click",function(e){
+      if(e.target.tagName==="IMG" && e.target.closest(".thumbs")){
+        LI.src=e.target.src.replace(/w_\d+,h_\d+/,"w_1400,h_1050");
+        L.classList.add("open"); e.stopPropagation();
+      }
+    });
+    L.addEventListener("click",function(e){ if(e.target!==LI) L.classList.remove("open"); });
+    document.getElementById("lbClose").addEventListener("click",function(){ L.classList.remove("open"); });
+  })();
+</script>
+</body>
+</html>
