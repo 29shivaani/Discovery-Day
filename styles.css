@@ -375,3 +375,14 @@ a.tagcap:hover{color:var(--green);background:#fff}
     flex-direction: column;
   }
 }
+
+.email-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.email-list .mail {
+  display: block;
+}
