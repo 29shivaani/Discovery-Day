@@ -310,8 +310,8 @@ a.tagcap:hover{color:var(--green);background:#fff}
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
-  color: #157347; 
+  padding: 20px 20px 40px;
+  color: #1a2e26;
 }
 
 .content-left {
