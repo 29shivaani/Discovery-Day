@@ -301,3 +301,66 @@ header.nav.scrolled{box-shadow:0 10px 30px rgba(22,50,35,.10)}
 /* clickable photo captions */
 a.tagcap{cursor:pointer;transition:color .15s,background .15s}
 a.tagcap:hover{color:var(--green);background:#fff}
+
+/* Page Layout for Host a Lab */
+.page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #ffffff;
+}
+
+.content-left {
+  flex: 1.2;
+}
+
+.content-right {
+  flex: 0.8;
+}
+
+.subheading {
+  color: #d4a373;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.description-section, .instructions-section {
+  margin-top: 30px;
+}
+
+.steps-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.steps-list li {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+.form-wrapper {
+  background: #ffffff;
+  color: #000000;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-wrapper iframe {
+  width: 100%;
+  min-height: 600px;
+  border: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+  }
+}
