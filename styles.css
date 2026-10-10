@@ -314,6 +314,20 @@ a.tagcap:hover{color:var(--green);background:#fff}
   color: #1a2e26;
 }
 
+.description-section {
+  margin-top: 20px; /* Reduces space above "About Hosting a Lab" */
+  margin-bottom: 20px; /* Reduces space below the paragraph */
+}
+
+.description-section h2 {
+  margin-bottom: 8px; /* Reduces gap between the heading and paragraph */
+}
+
+.description-section p {
+  margin-top: 0;
+  line-height: 1.5;
+}
+
 .content-left {
   flex: 1.2;
 }
