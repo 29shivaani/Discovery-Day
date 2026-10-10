@@ -386,3 +386,14 @@ a.tagcap:hover{color:var(--green);background:#fff}
 .email-list .mail {
   display: block;
 }
+
+.blog-empty-box {
+  background-color: #1a2e26;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
