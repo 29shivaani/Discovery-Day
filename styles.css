@@ -323,10 +323,9 @@ a.tagcap:hover{color:var(--green);background:#fff}
   flex: 0 0 420px;
 }
 
-/* Fix top heading margin */
 .content-left h1 {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin-top: 0 !important;
+  margin-bottom: 5px !important;
 }
 
 .description-section {
